@@ -1,3 +1,7 @@
+//O(n^2) Average Complexity
+
+import java.util.Arrays;
+
 public class BubbleSort {
 	public static void main(String[] args) {
 
@@ -11,14 +15,27 @@ class Sort {
 
 	public void sort(int[] numbers) {
 
-		for (int i = numbers.length - 1; i > 1; i-- {
+	 	boolean swapped = true;
+	 	int x = 0;
+	 	int temp;
 
-			for (int x = 0; x < i; x++) {
-				//TBD
-			}
-
-			//System.out.println(numbers[i]);
+	 	while (swapped) {
+	 		//set swap condition to false.  only switches to true if swap actually occurs
+	 		swapped = false;
+				for (int i = 0; i< numbers.length - 1; i++) {
+					//if value is greater than the next value, swap
+					if (numbers[i] > numbers[i + 1]) {
+						temp = numbers[i];
+						numbers[i] = numbers[i+1];
+						numbers[i+1] = temp;
+						swapped = true;
+					}		
+				}
 		}
+		
+		System.out.println("Sorted Order:");
+		System.out.println(Arrays.toString(numbers));
+
 	}
 }
 
