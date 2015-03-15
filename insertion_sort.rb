@@ -1,25 +1,26 @@
 # Insertion Sort
 # O(n^2) Average Complexity
 
+
 collection = [100,15,61,17,38,12]
 
 def insertion_sort(values)
 
 
-  for i in 0..values.length
+  for i in 1..values.length - 1
     value = values[i]
-    x = i
+    index = i
 
     begin
-    	values[x] = values[x-1]
-    	x = x -1
-    end while x > 0 && values[x-1] > x
+    	values[index] = values[index-1]
+    	index = index -1
+    end while index > 0 && values[index-1] > value
 
-    values[x] = value
+    values[index] = value
 
   end
 
-      puts values
+       puts values
 
 
 end
