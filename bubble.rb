@@ -1,4 +1,5 @@
-#Bubble sort
+# Bubble sort
+# O(n^2) Average complexity
 
 
 def self.sort(keys)
