@@ -6,14 +6,30 @@ public class Hash {
 
 	//main method
 	public static void main(String[] args) {
-		//TBD
+
+		//Create object
+		Hash hash = new Hash();
+		hash.hashingFunction("hello");
+		
 	}
 
 	//method to return unique key
-	public int hashKey(String s) {
+	public int hashingFunction(String key) {
 		int value = 0;
 
-		//TBD
+		//Iterate through each character in the string
+		for (char c : key.toCharArray())
+		 {
+		 	//get ascii value of character
+		 	int ascii = (int)c;
+		 	//add ascii value to the total value
+		 	value += ascii;
+		}
+
+		//keep within 1k range
+		value = value % 1000;
+
+		//return the value
 		return value;
 	}
 
