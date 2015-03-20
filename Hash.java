@@ -3,6 +3,8 @@
 
 public class Hash {
 
+	//array to store hash values
+	private String[] hashArray = new String[1000];
 
 	//main method
 	public static void main(String[] args) {
@@ -33,12 +35,22 @@ public class Hash {
 		return value;
 	}
 
-	//method to insert value into hash table
-	public boolean insert(Object value) {
-		boolean result = false;
-		//TBD
+	//find a value in the hash table
+	public String findValue(String s) {
+		//perform hash on the string to determine location
+		int location = hashingFunction(s);
+		//get value at location
+		String value = hashArray[location];
+		//return value
+		return value;
+	}
 
-		return result;
+	//method to insert value into hash table
+	public void insert(String s) {
+		//get the hash value for the string
+		int value = hashingFunction(s);
+		//store the value in the hash table
+		hashArray[value] = s;
 	}
 
 	
