@@ -2,6 +2,9 @@ require 'pry'
 
 # Hash table implementation
 
+# Notes: supports collection size of 1k
+# 		 does not currently support chaining
+
 class HashTable
 
   # hashed collection
