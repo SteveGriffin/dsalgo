@@ -1,15 +1,11 @@
 require 'pry'
 
 # Hash table implementation
-class HashTable1
+
+class HashTable
 
   # hashed collection
   @@collection = Array.new
-
-  # Constructor
-  def initialize
-
-  end
 
   # Hashing function
   def hash_function(value)
@@ -24,10 +20,10 @@ class HashTable1
       total += ascii
       # modulo 1000 (table range)
       total = total % 1000
-
-      # return result
-      total
     end
+
+    # return result
+    total
 
   end
 
@@ -37,6 +33,9 @@ class HashTable1
     hash_value = hash_function(value)
     # insert value
     @@collection[hash_value] = value
+
+    # return confirmation
+    "value: " << value << " inserted at position: " << hash_value.to_s
   end
 
   # delete value from collection
@@ -51,6 +50,11 @@ class HashTable1
     if result
       # set value to nil
       @@collection[hash_value] = nil
+      # return confirmation
+      "value deleted"
+    else
+      # return error message
+      "value not found"
     end
 
 
@@ -58,26 +62,33 @@ class HashTable1
 
   # search collection for value
   def search(value)
-  	#get hashed value
+    #get hashed value
     hash_value = hash_function(value)
 
     # if value exists return true
     if @@collection[hash_value] == value
-    	return true
+      return true
     else
-    	return false
+      return false
     end
   end
 
-  def test
-  end
+  # function to test various hash table features
+  def self.test
+    # tests
+    h = HashTable.new
+    # test hash function
+    puts h.hash_function("test")
+    # test insert
+    puts h.insert("test")
+    # test search
+    puts h.search("test")
+    # test delete
+    puts h.delete("test")
 
+  end
 
 end
 
-
-h = HashTable1.new
-
-# binding.pry
-
-h.hash_function("test")
+# run test
+HashTable.test
