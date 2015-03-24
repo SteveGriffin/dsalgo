@@ -1,6 +1,10 @@
 // Java hash table implementation
 // O(1) Average complexity for search, insertion and delete
 
+// Notes:
+// supports collection size of 1k
+// does not currently support chaining
+
 public class Hash {
 
 	//array to store hash values
@@ -12,6 +16,8 @@ public class Hash {
 		//Create object
 		Hash hash = new Hash();
 		hash.hashingFunction("hello");
+		hash.insert("hello");
+		System.out.println(hash.findValue("hello"));
 		
 	}
 
@@ -35,14 +41,21 @@ public class Hash {
 		return value;
 	}
 
-	//find a value in the hash table
+	// find a value in the hash table
 	public String findValue(String s) {
 		//perform hash on the string to determine location
 		int location = hashingFunction(s);
 		//get value at location
 		String value = hashArray[location];
-		//return value
-		return value;
+
+		if (value == null) {
+			return "value not found";
+		}
+		else {
+			//return value
+			return value;
+		}
+
 	}
 
 	//method to insert value into hash table
@@ -51,6 +64,14 @@ public class Hash {
 		int value = hashingFunction(s);
 		//store the value in the hash table
 		hashArray[value] = s;
+	}
+
+	//method to delete value from hash table
+	public void delete(String s) {
+		//get the hash value for the string
+		int value = hashingFunction(s);
+		//store the value in the hash table
+		hashArray[value] = null;
 	}
 
 	

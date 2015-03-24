@@ -1,9 +1,11 @@
 require 'pry'
 
 # Hash table implementation
+# O(1) Average complexity for search, insertion and delete
 
-# Notes: supports collection size of 1k
-# 		 does not currently support chaining
+# Notes:
+# supports collection size of 1k
+# does not currently support chaining
 
 class HashTable
 
