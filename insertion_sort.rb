@@ -1,6 +1,8 @@
 # Insertion Sort
 # O(n^2) Average Complexity
 
+require 'pry'
+
 
 collection = [100,15,61,17,38,12]
 

@@ -1,5 +1,7 @@
 #Ruby implementation of binary search
 
+require 'pry'
+
 values = [1,7,14,16,55,77, 79,100,150]
 
 

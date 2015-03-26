@@ -1,3 +1,8 @@
+# Merge sort ruby implementation
+# O(n log(n)) average complexity
+
+require 'pry'
+
 def merge_sort(array)
   return array if array.size <= 1
   left = merge_sort array[0, array.size / 2]
