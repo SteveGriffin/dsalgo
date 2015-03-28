@@ -1,20 +1,29 @@
 # ruby string reversal
 
 
-
+# string reversal method
 def self.reverse(string)
 
-	temp = ""
+  # temp string to hold reversed value
+  temp = ""
+  # get length of string parameter
+  length = string.length - 1
 
-	for char in string.length..0 do 
-		puts char
-		temp = temp << char
-	end
+  # work through the string backwards,
+  # appending the results to the temp string
+  begin
+    temp << string[length]
+    length = length - 1
+  end while length >= 0
 
-	temp
-
+  # return reversed value
+  temp
 end
 
-s = "test"
-puts reverse(s)
+# test code
+def self.test(test_string)
+  puts reverse(test_string)
+end
 
+# call test function
+test("test")
