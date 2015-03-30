@@ -22,6 +22,18 @@ end
 # linked list class for node management
 class LinkedList
 	# TBD
+
+	# search for item in linked list
+	def search(string)
+	end
+
+	# insertion function
+	def insert(object)
+	end
+
+	# delete function
+	def delete(object)
+	end
 end
 
 a = Node.new("Stephen")
